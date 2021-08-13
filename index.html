@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+    
+<div class="container">
+  <h3>Html Forms</h3>
+        <div class="form-group"><label>First Name</label><br>
+          <input type="text" placeholder="enter first name " class="fname" required>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label><br>
+          <input type="text" placeholder="enter last name " class="lname" required>
+        </div>
+        <div class="form-group">
+          <label>Address</label><br>
+          <div class="form-group"><input type="textarea" placeholder="enter address " class="address" required></div>
+          <div class="form-group"><label>Pin Code</label><br>
+            <input type="text" placeholder="enter first name " class="pincode" required>
+          </div>
+          <div class="form-group"><label>Gender</label><br>
+            <input type="text" placeholder="male/female " class="gender" required>
+          </div>
+          <div class="form-group"> <label for="food">Food</label><br>
+      
+            <select name="food" id="food" required>
+              <option value="">None</option>
+              <option value="Biriyani">Biriyani</option>
+              <option value="Fried Rice">Fried Rice</option>
+              <option value="Veg Pulav">Veg Pulav</option>
+              <option value="Chicken 65">Chicken 65</option>
+            </select><br>
+          </div>
+          <div class="form-group"><label>State</label><br>
+            <input type="text" placeholder="enter state name " class="state" required>
+          </div>
+          <div class="form-group"> <label>Country</label><br>
+            <input type="text" placeholder="enter country name " class="country" required>
+          </div><br>
+          <div><button class="submit" onclick="submit()">Submit</button></div>
+          
+        </div>
+        </div>
+        <br>
+<div class="details"><h3>Form Details</h3></div>
+        <div>
+          <table class="table table-striped table-dark table-sm", style="width:100%" id="myTable">
+            <tc>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Address</th>
+              <th>Pin Code</th>
+              <th>Gender</th>
+              <th>Food</th>
+              <th>State</th>
+              <th>Country</th>
+            </tc>
+      
+          </table>
+        </div>
+        <script>
+            function submit(){
+let table =document.getElementById("myTable");
+  let row=table.insertRow(table.rows.length);
+  let cell1=row.insertCell();
+  let cell2=row.insertCell();
+  let cell3=row.insertCell();
+  let cell4=row.insertCell();
+  let cell5=row.insertCell();
+  let cell6=row.insertCell();
+  let cell7=row.insertCell();
+  let cell8=row.insertCell();
+  cell1.innerHTML=document.querySelector(".fname").value;
+  cell2.innerHTML=document.querySelector(".lname").value;
+  cell3.innerHTML=document.querySelector(".address").value;
+  cell4.innerHTML=document.querySelector(".pincode").value;
+  cell5.innerHTML=document.querySelector(".gender").value;
+  cell6.innerHTML=document.querySelector("#food").value;
+  cell7.innerHTML=document.querySelector(".state").value;
+  cell8.innerHTML=document.querySelector(".country").value;
+  reset();
+}
+
+function reset(){
+  document.querySelector(".fname").value="";
+  document.querySelector(".lname").value="";
+  document.querySelector(".address").value="";
+  document.querySelector(".pincode").value="";
+  document.querySelector(".gender").value="";
+  // document.querySelector(".food").value="";
+  document.querySelector(".state").value="";
+  document.querySelector(".country").value="";
+}
+
+
+        </script>
+</body>
+</html>
